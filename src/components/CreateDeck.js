@@ -19,14 +19,22 @@ class CreateDeck extends Component {
   submit = () => {
     const { saveDeckTitle, navigation } = this.props;
     const { onNavBack } = this.props.navigation.state.params;
-    saveDeckTitle(this.state.deckTitle);
-    onNavBack();
-    navigation.goBack();
+    if (this.state.deckTitle.length > 0) {
+      saveDeckTitle(this.state.deckTitle);
+      onNavBack();
+      navigation.navigate('Deck', { title: this.state.deckTitle })
+    }
   };
 
   render() {
+    const { deckTitle } = this.state;
+
     return (
       <KeyboardAvoidingView style={styles.container} behavior='padding'>
+        {
+          deckTitle.length === 0 &&
+          <Text style={styles.errorMsg}>Please Enter a Name for your Deck</Text>
+        }
         <TextInput
           placeholder='Enter Deck Name'
           placeholderTextColor={white}
@@ -50,6 +58,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: backgroundColor,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  errorMsg: {
+    color: white,
   },
   text: {
     color: white
@@ -61,7 +73,9 @@ const styles = StyleSheet.create({
     color: white,
     marginRight: 15,
     marginLeft: 15,
+    marginTop: 15,
     paddingLeft: 10,
+    width: 300,
   },
   createBtnContainer: {
     backgroundColor: pink,
