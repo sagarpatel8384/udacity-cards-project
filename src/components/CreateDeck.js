@@ -1,38 +1,44 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { KeyboardAvoidingView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
 import { white, pink, backgroundColor } from '../util/colors';
 
-function mapStateToProps(state) { return { decks: state.decks }; }
+function mapStateToProps(state) { return { state }; }
 function mapDispatchToProps(dispatch) { return bindActionCreators(Actions, dispatch); }
 
 class CreateDeck extends Component {
-  state = {
-    deckTitle: '',
+  constructor(props) {
+    super(props);
+    this.state = {
+      deckTitle: '',
+    };
+  }
+
+  submit = () => {
+    const { saveDeckTitle, navigation } = this.props;
+    saveDeckTitle(this.state.deckTitle);
+    navigation.goBack();
   };
 
   render() {
-    const { createDeck } = this.props;
-
     return (
-      <View style={styles.container} >
-        <Text>{this.props.decks}</Text>
-
+      <KeyboardAvoidingView style={styles.container} behavior='padding'>
         <TextInput
           placeholder='Enter Deck Name'
           placeholderTextColor={white}
           style={styles.textInput}
           onChangeText={(text) => this.setState({deckTitle: text})}
           value={this.state.deckTitle}
+          autoFocus
         />
         <View style={styles.createBtnContainer}>
-          <TouchableOpacity style={styles.createBtn} onPress={() => createDeck(this.state.deckTitle)}>
+          <TouchableOpacity style={styles.createBtn} onPress={this.submit}>
             <Text>Create Deck</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import reducers from './src/reducers';
-import { createStore, combineReducers } from 'redux';
+import deckReducer from './src/reducers';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import MainNavigator from './src/components/MainNavigator';
 import CardsStatusBar from './src/components/CardsStatusBar';
 
-const store = createStore(combineReducers({reducers}));
+const rootReducer = combineReducers({ deck: deckReducer });
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default class App extends React.Component {
   render() {
