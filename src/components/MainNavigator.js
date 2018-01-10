@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import Home from './Home';
 import CreateDeck from './CreateDeck';
 import AddQuestion from './AddQuestion';
+import StartQuiz from './StartQuiz';
 import Deck from './Deck';
 
 export default MainNavigator = StackNavigator({
@@ -23,6 +24,12 @@ export default MainNavigator = StackNavigator({
   },
   AddQuestion: {
     screen: AddQuestion,
+  },
+  StartQuiz: {
+    screen: StartQuiz,
+    navigationOptions: {
+      title: 'Quiz'
+    },
   },
 });
 

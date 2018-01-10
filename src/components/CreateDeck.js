@@ -18,7 +18,9 @@ class CreateDeck extends Component {
 
   submit = () => {
     const { saveDeckTitle, navigation } = this.props;
+    const { onNavBack } = this.props.navigation.state.params;
     saveDeckTitle(this.state.deckTitle);
+    onNavBack();
     navigation.goBack();
   };
 

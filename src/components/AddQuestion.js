@@ -16,10 +16,10 @@ class AddQuestion extends Component {
 
   addQuestion = () => {
     const { navigation } = this.props;
-    const title = navigation.state.params.title;
+    const {title, questions, onNavBack} = navigation.state.params;
     const { addCardToDeck } = this.props;
     const card = this.state;
-    addCardToDeck(title, card);
+    addCardToDeck(title, questions, card);
     navigation.goBack();
   };
 

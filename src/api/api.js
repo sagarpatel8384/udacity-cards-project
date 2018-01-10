@@ -1,15 +1,18 @@
 import { AsyncStorage } from 'react-native';
 
 export function saveDeckTitle(deckTitle) {
-  return AsyncStorage.mergeItem(deckTitle, JSON.stringify({
+  const deck = {
     title: deckTitle,
     questions: [],
-  }));
+  };
+
+  return AsyncStorage.setItem(deckTitle, JSON.stringify(deck));
 }
 
-export function addCardToDeck(deck, question) {
-  deck.questions.push(question);
-  return AsyncStorage.mergeItem(deck.title, JSON.stringify(deck));
+export function addCardToDeck(title, questions, question) {
+  questions.push(question);
+  const deckDelta = { questions };
+  return AsyncStorage.mergeItem(title, JSON.stringify(deckDelta));
 }
 
 

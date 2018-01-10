@@ -3,9 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { white, pink } from '../util/colors';
 
-const BottomButtons = ({navigation}) => (
+const BottomButtons = ({navigation, onNavBack}) => (
   <View style={styles.bottomBtnContainer}>
-    <TouchableOpacity style={styles.bottomBtn} onPress={() => navigation.navigate('CreateDeck')}>
+    <TouchableOpacity style={styles.bottomBtn} onPress={() => navigation.navigate('CreateDeck', { onNavBack })}>
       <Feather name="file-plus" style={styles.bottomBtnIcon} size={32} />
       <Text style={styles.bottomBtnText}>Create Deck</Text>
     </TouchableOpacity>

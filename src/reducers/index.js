@@ -1,4 +1,4 @@
-import { SAVE_DECK_TITLE, GET_DECK, GET_DECKS, LOADING_DECKS } from '../actions/actionTypes';
+import { SAVE_DECK_TITLE, GET_DECK, GET_DECKS, LOADING_DECKS, LOADING_DECK, ADD_CARD_TO_DECK } from '../actions/actionTypes';
 
 export default function (state = {}, action) {
   switch (action.type) {
@@ -14,6 +14,7 @@ export default function (state = {}, action) {
         title: action.title,
         questions: action.questions,
         retrievedDeck: action.retrievedDeck,
+        loadingDeck: action.loadingDeck,
       };
     case GET_DECKS :
       return {
@@ -23,10 +24,19 @@ export default function (state = {}, action) {
         loadingDecks: action.loadingDecks,
       };
     case LOADING_DECKS :
+    return {
+      ...state,
+      loadingDecks: action.loadingDecks,
+    };
+    case LOADING_DECK :
       return {
         ...state,
-        decks: action.decks,
-        loadingDecks: action.loadingDecks,
+        loadingDeck: action.loadingDeck,
+      };
+    case ADD_CARD_TO_DECK :
+      return {
+        ...state,
+        deckCount: action.deckCount,
       };
     default :
       return state;

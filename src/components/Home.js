@@ -17,10 +17,11 @@ class Home extends Component {
     getDecks();
   }
 
-  componentDidUpdate() {
+  onNavBack = () => {
     const { loadingDecks, getDecks } = this.props;
+    loadingDecks();
     getDecks();
-  }
+  };
 
  render() {
     const { navigation } = this.props;
@@ -31,7 +32,7 @@ class Home extends Component {
           this.props.state.deck.loadingDecks === false &&
           <DeckListView deckData={this.props.state.deck} navigation={navigation} />
         }
-        <BottomButtons navigation={navigation} />
+        <BottomButtons navigation={navigation} onNavBack={this.onNavBack} />
       </View>
     );
   }

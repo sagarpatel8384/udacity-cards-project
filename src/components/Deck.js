@@ -10,16 +10,18 @@ function mapDispatchToProps(dispatch) { return bindActionCreators(Actions, dispa
 
 class Deck extends Component {
   componentWillMount() {
-    const { getDeck } = this.props;
+    const { getDeck, loadingDeck } = this.props;
     const { title } = this.props.navigation.state.params;
+    loadingDeck();
     getDeck(title);
   }
 
-  componentDidUpdate() {
-    const { getDeck } = this.props;
+  onNavBack = () => {
+    const { getDeck, loadingDeck } = this.props;
     const { title } = this.props.navigation.state.params;
+    loadingDeck();
     getDeck(title);
-  }
+  };
 
   static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.title}`,
@@ -31,7 +33,7 @@ class Deck extends Component {
     const { navigation } = this.props;
     let contents;
 
-    if (this.props.state.deck.retrievedDeck === true) {
+    if (this.props.state.deck.loadingDeck === false) {
       contents =  (
           <View>
             <Text style={styles.deckTitle}>{title}</Text>
@@ -42,12 +44,15 @@ class Deck extends Component {
                   : `${this.props.state.deck.questions.length} Questions`
               }
             </Text>
-            <TouchableOpacity style={styles.addCardBtn} onPress={() => navigation.navigate('AddQuestion', { title })}>
+            <TouchableOpacity style={styles.addCardBtn} onPress={() => navigation.navigate('AddQuestion', { title, questions: this.props.state.deck.questions, onNavBack: this.onNavBack })}>
               <Text stytles={styles.btnText}>Add Question</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.startQuizBtn}>
-              <Text>Start Quiz</Text>
-            </TouchableOpacity>
+            {
+              this.props.state.deck.questions.length > 0 &&
+              <TouchableOpacity style={styles.startQuizBtn} onPress={() => navigation.navigate('StartQuiz', { questions: this.props.state.deck.questions })}>
+                <Text>Start Quiz</Text>
+              </TouchableOpacity>
+            }
           </View>
 
       );

@@ -3,12 +3,13 @@ import { View, StyleSheet } from 'react-native';
 import deckReducer from './src/reducers';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 import MainNavigator from './src/components/MainNavigator';
 import CardsStatusBar from './src/components/CardsStatusBar';
 
 const rootReducer = combineReducers({ deck: deckReducer });
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 
 export default class App extends React.Component {
   render() {
