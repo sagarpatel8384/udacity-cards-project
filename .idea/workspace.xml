@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa449e2e-0db5-42f0-9359-9b41ca402f57" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actionTypes.js" afterPath="$PROJECT_DIR$/src/actions/actionTypes.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" afterPath="$PROJECT_DIR$/src/api/api.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddQuestion.js" afterPath="$PROJECT_DIR$/src/components/AddQuestion.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/BottomButtons.js" afterPath="$PROJECT_DIR$/src/components/BottomButtons.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateDeck.js" afterPath="$PROJECT_DIR$/src/components/CreateDeck.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Deck.js" afterPath="$PROJECT_DIR$/src/components/Deck.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" afterPath="$PROJECT_DIR$/src/components/Home.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainNavigator.js" afterPath="$PROJECT_DIR$/src/components/MainNavigator.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartQuiz.js" afterPath="$PROJECT_DIR$/src/components/StartQuiz.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartQuiz.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StartQuiz.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/StartQuiz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state relative-caret-position="553">
+              <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -43,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardQuestion.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CardQuestion.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CardQuestion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="380">
+              <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -77,6 +66,7 @@
       <find>length</find>
       <find>ADD_CARD_TO_DECK</find>
       <find>debugger</find>
+      <find>Answer</find>
     </findStrings>
     <replaceStrings>
       <replace>SAVE_DECK_TITLE</replace>
@@ -112,8 +102,8 @@
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/components/MainNavigator.js" />
         <option value="$PROJECT_DIR$/src/components/Deck.js" />
-        <option value="$PROJECT_DIR$/src/components/StartQuiz.js" />
         <option value="$PROJECT_DIR$/src/components/CardQuestion.js" />
+        <option value="$PROJECT_DIR$/src/components/StartQuiz.js" />
       </list>
     </option>
   </component>
@@ -133,7 +123,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="599" />
     <option name="y" value="22" />
     <option name="width" value="1598" />
@@ -334,15 +324,15 @@
       <workItem from="1515174476043" duration="3396000" />
       <workItem from="1515193607826" duration="10291000" />
       <workItem from="1515246131140" duration="19570000" />
-      <workItem from="1515592149636" duration="11088000" />
+      <workItem from="1515592149636" duration="11852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52187000" />
+    <option name="totallyTimeSpent" value="52951000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="599" y="22" width="1598" height="1414" extended-state="0" />
+    <frame x="0" y="22" width="3440" height="1414" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -358,7 +348,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17209011" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07994186" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32838038" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -682,20 +672,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/StartQuiz.js">
+    <entry file="file://$PROJECT_DIR$/src/components/CardQuestion.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="380">
+          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CardQuestion.js">
+    <entry file="file://$PROJECT_DIR$/src/components/StartQuiz.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        <state relative-caret-position="553">
+          <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

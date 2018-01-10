@@ -23,7 +23,8 @@ class StartQuiz extends Component {
 
   loadNext = () => {
     this.setState(prevState => ({
-      currentCardIndex: prevState.currentCardIndex + 1
+      currentCardIndex: prevState.currentCardIndex + 1,
+      showingAnswer: false
     }));
   };
 
@@ -62,7 +63,9 @@ class StartQuiz extends Component {
           <View style={styles.questionContainer}>
             <CardQuestion question={questions[currentCardIndex]} showingAnswer={showingAnswer}/>
             <TouchableOpacity onPress={this.showAnswer}>
-              <Text style={styles.answerBtnText}>Answer</Text>
+              <Text style={styles.answerBtnText}>
+                { this.state.showingAnswer ? 'Show Question' : 'Show Answer' }
+              </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.buttonsContainer}>
