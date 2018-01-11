@@ -3,15 +3,19 @@ import { View, StyleSheet } from 'react-native';
 import deckReducer from './src/reducers';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 import MainNavigator from './src/components/MainNavigator';
 import CardsStatusBar from './src/components/CardsStatusBar';
+import { setLocalNotification } from './src/util/helpers';
 
 const rootReducer = combineReducers({ deck: deckReducer });
-const store = createStore(rootReducer, applyMiddleware(logger, thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
-export default class App extends React.Component {
+export default class App extends Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
+
   render() {
     return (
       <Provider store={store}>

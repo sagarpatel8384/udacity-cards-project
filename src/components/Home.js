@@ -30,7 +30,7 @@ class Home extends Component {
       <View style={styles.container}>
         {
           this.props.state.deck.loadingDecks === false &&
-          <DeckListView deckData={this.props.state.deck} navigation={navigation} />
+          <DeckListView deckData={this.props.state.deck} navigation={navigation} onNavBack={this.onNavBack} />
         }
         <BottomButtons navigation={navigation} onNavBack={this.onNavBack} />
       </View>

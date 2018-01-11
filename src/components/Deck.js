@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { pink, white, backgroundColor } from '../util/colors';
+import { clearLocalNotification, setLocalNotification } from '../util/helpers';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
@@ -16,11 +17,11 @@ class Deck extends Component {
     getDeck(title);
   }
 
-  onNavBack = () => {
-    const { getDeck, loadingDeck } = this.props;
-    const { title } = this.props.navigation.state.params;
-    loadingDeck();
-    getDeck(title);
+  startQuiz = () => {
+    const { navigation } = this.props;
+    clearLocalNotification();
+    setLocalNotification();
+    navigation.navigate('StartQuiz', { questions: this.props.state.deck.questions })
   };
 
   static navigationOptions = ({ navigation }) => ({
@@ -29,7 +30,7 @@ class Deck extends Component {
   });
 
   render() {
-    const { title } = this.props.navigation.state.params;
+    const { title, onNavBack } = this.props.navigation.state.params;
     const { navigation } = this.props;
     let contents;
 
@@ -44,12 +45,12 @@ class Deck extends Component {
                   : `${this.props.state.deck.questions.length} Questions`
               }
             </Text>
-            <TouchableOpacity style={styles.addCardBtn} onPress={() => navigation.navigate('AddQuestion', { title, questions: this.props.state.deck.questions, onNavBack: this.onNavBack })}>
+            <TouchableOpacity style={styles.addCardBtn} onPress={() => navigation.navigate('AddQuestion', { title, questions: this.props.state.deck.questions, onNavBack })}>
               <Text stytles={styles.btnText}>Add Question</Text>
             </TouchableOpacity>
             {
               this.props.state.deck.questions.length > 0 &&
-              <TouchableOpacity style={styles.startQuizBtn} onPress={() => navigation.navigate('StartQuiz', { questions: this.props.state.deck.questions })}>
+              <TouchableOpacity style={styles.startQuizBtn} onPress={this.startQuiz}>
                 <Text>Start Quiz</Text>
               </TouchableOpacity>
             }

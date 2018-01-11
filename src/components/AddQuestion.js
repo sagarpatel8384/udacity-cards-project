@@ -20,6 +20,7 @@ class AddQuestion extends Component {
     const { addCardToDeck } = this.props;
     const card = this.state;
     addCardToDeck(title, questions, card);
+    onNavBack();
     navigation.goBack();
   };
 
